@@ -3,29 +3,44 @@ import './App.css'
 
 class Rectangle extends Component {
   render() {
+    const height = this.props.height || "100px"
+    const width = this.props.width || "100px"
+    
     const style = {
-      height: this.props.height || "100px",
-      width: this.props.width || "100px",
-      backgroundColor: this.props.color || "red"
+      height,
+      width,
+      backgroundColor: this.props.color || "red",
+      margin: this.props.margin || "0px",
+      padding: this.props.padding || "0px",
+      borderRadius: this.props.borderRadius || "0px",
+      textAlign: "center",
+      verticalAlign: "middle",
+      lineHeight: height
     }
 
     return (
-      <div style={style}></div>
+      <div style={style}>{this.props.children}</div>
     )
   }
 }
 
 class Circle extends Component {
   render() {
+    const diameter = this.props.diameter || "100px"
     const style = {
-      height: this.props.diameter || "100px",
-      width: this.props.diameter || "100px",
+      height: diameter,
+      width: diameter,
       borderRadius: this.props.diameter || "100px",
-      backgroundColor: this.props.color || "red"
+      backgroundColor: this.props.color || "red",
+      margin: this.props.margin || "0px",
+      padding: this.props.padding || "0px",
+      textAlign: "center",
+      verticalAlign: "middle",
+      lineHeight: diameter
     }
 
     return (
-      <div style={style}></div>
+      <div style={style}>{this.props.children}</div>
     )
   }
 }
